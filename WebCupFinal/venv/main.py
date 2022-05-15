@@ -6,6 +6,7 @@ from flask import Flask, render_template, request
 import psycopg2
 import psycopg2.extras
 
+
 app = Flask(__name__)
 app.secret_key = 'cairocoders-ednalan'
 #app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
@@ -103,6 +104,10 @@ def moon():
 @app.route("/mars", methods=['GET'])
 def mars():
     return render_template('mars.html')
+    
+@app.route("/admin", methods=['GET'])
+def admin():
+    return render_template('admin.html')
 
 if __name__ == '__main__':
    app.run(debug=True)
